@@ -1,0 +1,73 @@
+@use "../App";
+
+.sidenav
+{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 25rem;
+  height: 100%;
+  border-right: 1px solid #000;
+  z-index: 1032;
+  // box-shadow: 7px 0px 10px 0px rgba(0, 0, 0, 0.43);
+  //   -webkit-box-shadow: 7px 0px 10px 0px rgba(0, 0, 0, 0.43);
+  //   -moz-box-shadow: 7px 0px 10px 0px rgba(0, 0, 0, 0.43);
+  
+  // background-color: lightgray;
+
+  &__header
+  {
+    // background-color: lightgray;
+
+    &-content
+    {
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+  }
+
+  &__account
+  {
+    // background-color: lightgray;
+    &-image
+    {
+      width: 6.4rem;
+      height: 6.4rem;
+      margin: 0 auto;
+      border-radius: 5rem;
+      background-color: #000;
+    }
+
+    &-name
+    {
+      margin: 1rem 0;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+  }
+
+  &__menu
+  {
+    padding: 2.4rem;
+
+    &-item:not(:last-child)
+    {
+      margin-bottom: 1.5rem;
+    }
+
+    &-link span
+    {
+      margin-left: 1rem;
+      font-size: 1.6rem;
+    }
+
+    &-icon
+    {
+      font-size: 1.4rem;
+    }
+  }
+}

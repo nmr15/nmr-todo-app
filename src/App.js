@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import AddTodo from './components/AddTodo';
+import Sidenav from './components/Sidenav';
+import TodoList from './components/TodoList';
 
 function App() {
+  // const [todoId, setTodoId] = useState("");
+
+  // const getTodoHandler = (id) => {
+  //   console.log("ID to be edited: ", id);
+  //   setTodoId(id);
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Sidenav />
+      <TodoList />
+      {/* <AddTodo id={todoId} setTodoId={setTodoId} /> */}
+      <Routes>
+        <Route path="/" element={ <Home /> } />
+        <Route path="addTodo" element={ <AddTodo  /> } />
+        <Route path="todoList" element={ <TodoList />} />
+      </Routes>
     </div>
   );
 }

@@ -1,0 +1,39 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+html, body
+{
+  height: 100%;
+  font-family: "Noto Sans", sans-serif;
+}
+
+/*
+  p 16px
+  h1 32px
+
+*/
+
+a
+{
+  color: #000;
+  text-decoration: none;
+}
+
+ul
+{
+  list-style: none;
+}
+
+.btn
+{
+  padding: .6rem 1.2rem;
+  border: 1px solid #e7e9eb;
+  border-radius: .5rem;
+  background-color: #e7e9eb;
+  font-size: 1.6rem;
+}

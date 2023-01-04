@@ -1,0 +1,50 @@
+.todo
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 25rem;
+  padding: 5rem;
+  // background-color: lightblue;
+
+  &__item
+  {
+    width: 50rem;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    // border: 1px solid #000;
+  }
+
+  &__header
+  {
+    padding: 1rem;
+    background-color: #f6f7f9;
+    
+    & h3
+    {
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+  }
+
+  &__body
+  {
+    height: 18rem;
+    padding: 1rem;
+
+    &-content
+    {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__icon {
+    margin-left: 140rem;
+    // margin-top: 30rem;
+
+    &-add {
+      cursor: pointer;
+      font-size: 5rem;
+    }
+  }
+}

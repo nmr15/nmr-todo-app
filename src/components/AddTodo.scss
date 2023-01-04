@@ -1,0 +1,36 @@
+.addtodo
+{
+  position: fixed;
+  width: 55rem;
+  height: 30rem;
+  top: 15rem;
+  left: 40rem;
+  z-index: 1033;
+  // margin-left: 25rem;
+  background-color: #fff;
+
+  &__form
+  {
+    padding-top: 5rem;
+    padding-left: 5rem;
+    // margin-top: 15rem;
+    // margin-left: 40rem;
+  }
+
+  &__label
+  {
+    font-size: 1.6rem;
+  }
+
+  &__input
+  {
+    display: block;
+    width: 45rem;
+    margin: .6rem 0 2.4rem 0;
+    padding: .6rem 1.2rem;
+    border: 1px solid #cfd1d3;
+    border-radius: .5rem;
+    background-color: #fff;
+    font-size: 1.6rem;
+  }
+}
