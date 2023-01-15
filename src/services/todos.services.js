@@ -29,6 +29,12 @@ class TodoDataServices
     return updateDoc(todoDoc, updatedTodo);
   }
 
+  updateDone = (id, updatedDone) =>
+  {
+    const todoDoc = doc(db, "tbl_todo", id);
+    return updateDoc(todoDoc, updatedDone);
+  }
+
   deleteTodo = (id) =>
   {
     const todoDoc = doc(db, "tbl_todo", id);

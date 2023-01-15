@@ -2,6 +2,7 @@
 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   margin-left: 25rem;
   padding: 5rem;
   // background-color: lightblue;
@@ -38,13 +39,52 @@
     }
   }
 
-  &__icon {
+  &__buttons
+  {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 1rem 0.5rem 1rem;
+  }
+
+  &__icons
+  {
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  &__btn-modal {
     margin-left: 140rem;
     // margin-top: 30rem;
 
-    &-add {
+    &-icon {
       cursor: pointer;
       font-size: 5rem;
+    }
+  }
+}
+
+.tabs
+{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-left: 25rem;
+
+  &__link
+  {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 2rem;
+
+    &-bgBlue
+    {
+      background-color: #2196f3;
+    }
+
+    &-bgRed
+    {
+      background-color: #f44336;
     }
   }
 }

@@ -2,10 +2,13 @@
 {
   position: fixed;
   width: 55rem;
-  height: 30rem;
-  top: 15rem;
-  left: 40rem;
+  height: 35rem;
+  top: 20%;
+  left: 35%;
   z-index: 1033;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
   // margin-left: 25rem;
   background-color: #fff;
 
@@ -32,5 +35,14 @@
     border-radius: .5rem;
     background-color: #fff;
     font-size: 1.6rem;
+  }
+
+  &__btn-close
+  {
+    position: relative;
+    left: 52rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
   }
 }
