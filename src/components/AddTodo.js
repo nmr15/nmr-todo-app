@@ -52,6 +52,7 @@ const AddTodo = ({ modal, setModal, id, setTodoId }) => {
     }
 
     setModal("none");
+    window.location.reload(false);
   }
 
   const editHandler = async() =>

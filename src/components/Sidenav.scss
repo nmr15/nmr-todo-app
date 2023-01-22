@@ -8,7 +8,7 @@
   left: 0;
   width: 25rem;
   height: 100%;
-  border-right: 1px solid #000;
+  border-right: 1px solid #EEEEEE;
   z-index: 1032;
   // box-shadow: 7px 0px 10px 0px rgba(0, 0, 0, 0.43);
   //   -webkit-box-shadow: 7px 0px 10px 0px rgba(0, 0, 0, 0.43);
@@ -18,7 +18,7 @@
 
   &__header
   {
-    // background-color: lightgray;
+    background-color: #EEEEEE;
 
     &-content
     {
@@ -52,11 +52,12 @@
 
   &__menu
   {
-    padding: 2.4rem;
+    margin-top: 2rem;
 
-    &-item:not(:last-child)
+    &-item
     {
-      margin-bottom: 1.5rem;
+      width: 100%;
+      padding: 1rem;
     }
 
     &-link span

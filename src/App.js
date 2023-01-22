@@ -16,14 +16,14 @@ function App() {
 
   return (
     <div>
-      <Sidenav />
+      {/* <Sidenav /> */}
       <TodoList />
       {/* <AddTodo id={todoId} setTodoId={setTodoId} /> */}
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="addTodo" element={ <AddTodo  /> } />
         <Route path="todoList" element={ <TodoList />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
