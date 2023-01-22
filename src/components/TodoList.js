@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { FaCheckSquare, FaEdit, FaTrashAlt } from 'react-icons/fa';
+import { FaCheckSquare, FaCheck, FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { HiPlusCircle } from 'react-icons/hi';
 import { IconContext } from 'react-icons/lib';
 import TodoDataServices from '../services/todos.services';
 import './TodoList.scss';
 import AddTodo from './AddTodo';
+import Sidenav from './Sidenav';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -13,7 +14,6 @@ const TodoList = () => {
   const [done, setDone] = useState(false);
   const [modal, setModal] = useState("none")
   const [todoId, setTodoId] = useState("");
-  const [doneId, setDoneId] = useState("");
 
   
 
@@ -58,6 +58,7 @@ const TodoList = () => {
 
     await TodoDataServices.updateDone(id, newDone);
     alert("Todo updated");
+    window.location.reload(false);
   }
 
   const deleteHandler = async(id) =>
@@ -73,14 +74,13 @@ const TodoList = () => {
 
   return (
     <>
+      <Sidenav doneTodos={doneTodos} setDoneTodos={setDoneTodos} modal={modal} setModal={setModal} />
       <section className="section__todo">
-        <div className="tabs">
+        {/* <div className="tabs">
           <a href="#" className="tabs__link tabs__link-bgRed" onClick={() => setDoneTodos(false)} >View Not Completed</a>
           <a href="#" className="tabs__link tabs__link-bgBlue" onClick={() => setDoneTodos(true)} >View Completed</a>
-        </div>
+        </div> */}
         <div className="todo">
-          {/* <button onClick={() => setDoneTodos(true)}>Done</button>
-          <button onClick={() => setDoneTodos(false)}>Not Done</button> */}
           {todos
             .filter(todo => todo.done === doneTodos)
             .map((todo) =>
@@ -93,22 +93,25 @@ const TodoList = () => {
                 <div className="todo__body">
                   <p className="todo__body-content">{todo.todo_body}</p>
                 </div>
-                <div className="todo__buttons">
-                  <IconContext.Provider value={{className: "todo__icons"}}>
-                    <FaCheckSquare onClick={(e) => getDoneId(todo.id)} />
-                    <FaEdit onClick={(e) => getTodoId(todo.id)} />
-                    <FaTrashAlt onClick={(e) => deleteHandler(todo.id)} />
-                  </IconContext.Provider>
+                <div className="todo__buttons" style={{justifyContent: todo.done ? "flex-end" : "space-between"}}>
+                  <a href="#" onClick={(e) => getDoneId(todo.id)} style={{display: todo.done ? "none" : "block"}} >Complete</a>
+                  <div>
+                    <IconContext.Provider value={{ className: "todo__icons" }}>
+                      {/* <FaCheck className="todo__icons-bgblue" onClick={(e) => getDoneId(todo.id)} /> */}
+                      <FaEdit className="todo__icons-bggreen" onClick={(e) => getTodoId(todo.id)} />
+                      <FaTrashAlt className="todo__icons-bgred" onClick={(e) => deleteHandler(todo.id)} />
+                    </IconContext.Provider>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
-        <div className="todo__btn-modal">
+        {/* <div className="todo__btn-modal">
           <IconContext.Provider value={{ className: "todo__btn-modal-icon" }}>
             <HiPlusCircle onClick={() => setModal("block")} />
           </IconContext.Provider>
-        </div>
+        </div> */}
       </section>
       <AddTodo modal={modal} setModal={setModal} id={todoId} setTodoId={setTodoId} />
     </>
